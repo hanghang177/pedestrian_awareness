@@ -1,0 +1,5 @@
+<launch>
+  <node name="raspicam_node" pkg="raspicam" type="raspicam_node" args="_framerate:=15 _quality:=5 _width:=1280 _height:=720"/>
+  <node pkg="rosservice" type="rosservice" name="start_cap" args="call --wait /camera/start_capture"/>
+  <node name="pwm" pkg="dfrobot" type="pwm.py"/>
+</launch>
